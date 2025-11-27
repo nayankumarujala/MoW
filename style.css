@@ -1,0 +1,289 @@
+/*
+Theme Name: Mosaic of Words
+Author: OpenAI
+Description: Dark Academia inspired literary theme front page.
+Version: 1.0
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Lora:wght@400;500;600&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --bg-start: #050505;
+  --bg-end: #0a0a0a;
+  --card-bg: #111111;
+  --text: #e5e5e5;
+  --accent: #d4af37;
+  --muted: #9b8f70;
+  --max-width: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.08), transparent 30%),
+    linear-gradient(180deg, var(--bg-start) 0%, var(--bg-end) 100%);
+  color: var(--text);
+  font-family: 'Lora', 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.7;
+  min-height: 100vh;
+  padding: 0 1.5rem 3rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.page-wrapper {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.section {
+  padding: 4rem 0;
+  position: relative;
+}
+
+.section-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  letter-spacing: 0.04em;
+  margin-bottom: 1.5rem;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.hero {
+  text-align: center;
+  padding: 6rem 0 5rem;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 10% 15%;
+  background: radial-gradient(circle at center, rgba(212, 175, 55, 0.18), transparent 50%);
+  filter: blur(45px);
+  z-index: 0;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.6rem, 6vw, 3.8rem);
+  letter-spacing: 0.08em;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: #cfcfcf;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.8rem;
+  border: 1px solid var(--accent);
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: transparent;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background: var(--accent);
+  color: #0a0a0a;
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.2);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.6rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+  border-color: var(--accent);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+}
+
+.card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-date {
+  font-size: 0.9rem;
+  color: #b3b3b3;
+  margin-bottom: 0.8rem;
+}
+
+.card-excerpt {
+  color: #d7d7d7;
+  margin-bottom: 1rem;
+}
+
+.card-link {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.reflection-space {
+  text-align: center;
+  padding: 4rem 3rem;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  background: radial-gradient(circle at 50% 20%, rgba(212, 175, 55, 0.06), rgba(17, 17, 17, 0.8));
+  border-radius: 12px;
+}
+
+.reflection-space blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  color: #f0f0f0;
+  letter-spacing: 0.03em;
+}
+
+.featured-essay {
+  background: #0f0f0f;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  padding: 2.5rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: inset 0 0 40px rgba(212, 175, 55, 0.05);
+}
+
+.featured-essay p {
+  margin: 1rem 0 1.5rem;
+  color: #dcdcdc;
+  font-size: 1.05rem;
+}
+
+.visual-poetry img {
+  border-radius: 8px;
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.visual-poetry img:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.2);
+}
+
+.newsletter {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1.3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.newsletter input[type='email'] {
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  background: rgba(17, 17, 17, 0.9);
+  color: var(--text);
+  border-radius: 6px;
+  min-width: 260px;
+}
+
+.newsletter input[type='email']::placeholder {
+  color: #bfbfbf;
+}
+
+.about-connect {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.text-muted {
+  color: #c4c4c4;
+}
+
+.footer {
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+  padding: 1.5rem 0;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+.footer-menu {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.fade-up {
+  animation: fadeUp 0.9s ease both;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 0 1rem 2rem;
+  }
+
+  .hero {
+    padding: 4.5rem 0 3.5rem;
+  }
+}
